@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mobile osteopathy and sports massage in East London. Book expert treatment across Leyton, Walthamstow, Wanstead, Clapton and Hackney."
+    />
+    <title>OsteoJack | Mobile Osteopathy & Sports Massage in East London</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-deep: #0f2344;
+            --secondary: #2b6cb0;
+            --secondary-soft: #eaf3ff;
+            --bg: #f5f8fc;
+            --surface: #ffffff;
+            --surface-alt: #edf4fb;
+            --text: #243244;
+            --muted: #586a7f;
+            --border: #dfeaf5;
+            --shadow: 0 18px 40px rgba(26, 54, 93, 0.10);
+            --radius: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(43, 108, 176, 0.08), transparent 30%),
+                linear-gradient(180deg, #f8fbff 0%, #f3f7fb 100%);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(12px);
+            background: rgba(248, 251, 255, 0.8);
+            border-bottom: 1px solid rgba(223, 234, 245, 0.9);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 78px;
+        }
+
+        .logo {
+            text-decoration: none;
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary), #477fc7);
+            color: #fff;
+            box-shadow: 0 10px 28px rgba(43, 108, 176, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .hero {
+            padding: 72px 0 40px;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: var(--secondary-soft);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            line-height: 1.08;
+            letter-spacing: -0.05em;
+            color: var(--primary);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-copy p {
+            margin: 0 0 26px;
+            max-width: 640px;
+            font-size: 1.1rem;
+            color: var(--muted);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 0.96rem;
+        }
+
+        .hero-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(237,244,251,0.9));
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(43, 108, 176, 0.18), transparent 65%);
+            transform: translate(-30%, -30%);
+        }
+
+        .service-chip {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 10px 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .bg-white {
+            background-color: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .price-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .price-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .price-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .price-title {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .price-amount {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: var(--muted);
+            background: var(--surface-alt);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .contact-box {
+            background: var(--primary-deep);
+            color: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            color: white;
+        }
+
+        .contact-box p {
+            color: #a0aec0;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav">
+            <a href="#" class="logo">OsteoJack</a>
+            <div class="nav-actions">
+                <a href="YOUR_CLINIKO_BOOKING_URL_HERE" class="btn btn-primary">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-copy">
+                <span class="eyebrow">Mobile Clinic</span>
+                <h1>Osteopathy & Sports Massage in East London.</h1>
+                <p>Expert clinical assessment, deep tissue work, and injury rehab—delivered directly to your living room. No travel, no waiting rooms, just results.</p>
+                <div class="hero-actions">
+                    <a href="YOUR_CLINIKO_BOOKING_URL_HERE" class="btn btn-primary">Book a Home Visit</a>
+                </div>
+                <div class="hero-meta">
+                    <span>📍 Leyton & Surrounding</span>
+                    <span>🕒 Mon / Wed / Fri</span>
+                </div>
+            </div>
+            
+            <div class="hero-card">
+                <div class="service-chip">Catchment Area</div>
+                <p style="color: var(--muted); margin-bottom: 10px;">I operate strictly mobile within a ~20-minute driving radius of Leyton (E10).</p>
+                <p style="font-weight: 700; color: var(--primary);">Primary Coverage:</p>
+                <ul style="color: var(--muted); padding-left: 20px; margin-top: 5px;">
+                    <li>Leyton & Leytonstone</li>
+                    <li>Walthamstow</li>
+                    <li>Wanstead</li>
+                    <li>Clapton & Hackney</li>
+                </ul>
+                <p style="font-size: 0.9rem; color: var(--secondary); margin-top: 15px; font-weight: 600;">* Just provide a 2x3m floor space for the table.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-white">
+        <div class="container">
+            <h2>Treatment Menu</h2>
+            <p style="color: var(--muted); max-width: 600px;">No hidden travel fees for catchment areas. Secure your slot and fill out your medical history seamlessly online.</p>
+            
+            <div class="services-grid">
+                <div class="price-card">
+                    <div class="price-header">
+                        <span class="price-title">Initial Osteopathy</span>
+                        <span class="price-amount">£70</span>
+                    </div>
+                    <p style="color: var(--muted); font-size: 0.95rem; margin: 0;"><strong>60 mins:</strong> Full biomechanical assessment, diagnosis, hands-on treatment, and a tailored rehab plan.</p>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-header">
+                        <span class="price-title">Follow-Up Osteopathy</span>
+                        <span class="price-amount">£60</span>
+                    </div>
+                    <p style="color: var(--muted); font-size: 0.95rem; margin: 0;"><strong>45 mins:</strong> Ongoing management, manual therapy, and progression of your rehab.</p>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-header">
+                        <span class="price-title">Sports Massage</span>
+                        <span class="price-amount">£80</span>
+                    </div>
+                    <p style="color: var(--muted); font-size: 0.95rem; margin: 0;"><strong>60 mins:</strong> Dedicated, continuous soft tissue mobilization and deep tissue work.</p>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-header">
+                        <span class="price-title">Deep Tissue Reset</span>
+                        <span class="price-amount">£110</span>
+                    </div>
+                    <p style="color: var(--muted); font-size: 0.95rem; margin: 0;"><strong>90 mins:</strong> The ultimate recovery session for marathon runners, lifters, or total system reset.</p>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Important Note:</strong> For the clinical assessment and treatment, please ensure you wear or have ready comfortable, loose clothing (such as shorts and a sports vest).
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container" style="max-width: 800px;">
+            <h2>About Jack</h2>
+            <p>Hi, I’m Jack. I’m a registered osteopath and soft tissue specialist based in Leyton. I’ve been practicing for the last few years, offering premium mobile care across East London. When I’m not working, you’ll usually find me out in Epping Forest or Walthamstow with my partner, our little boy Leo, and our Goldendoodle, Milo.</p>
+            <p>My background is actually a bit different from most practitioners. I originally worked as an electrician. Truthfully, troubleshooting a complex electrical grid isn't all that different from assessing the human neuromusculoskeletal system.</p>
+            <p>When you book a session, we don’t just chase the localized pain. I conduct a full biomechanical assessment
